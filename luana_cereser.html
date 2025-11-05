@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido Especial 😳💘</title>
+  <style>
+    body {
+      background: #eee;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      transition: background 0.5s ease;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    h1 {
+      margin: 0 0 10px 0;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    button {
+      border: none;
+      padding: 10px 18px;
+      font-size: 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      opacity: 0.9;
+    }
+
+    #btnSim {
+      background: #2ecc71;
+      color: white;
+    }
+
+    #btnSim2 {
+      background: #3498db;
+      color: white;
+    }
+
+    #btnNao {
+      background: #e74c3c;
+      color: white;
+    }
+
+    iframe, img {
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 320px;
+      height: 570px;
+      border: none;
+      object-fit: cover;
+    }
+
+    #player, #imagemTela {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    #btnVoltar {
+      background: #100f0f;
+      color: rgb(192, 32, 32);
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #btnVoltar:hover {
+      background: #c21212;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <h1>Luana Cereser</h1>
+    <p>Aceita sair comigo 🥺🥺🥺?</p>
+    <div class="buttons">
+      <button id="btnSim">Sim, com certeza</button>
+      <button id="btnSim2">SIMMM</button>
+    </div>
+  </div>
+
+  <!-- PLAYER DE VÍDEO -->
+  <div id="player">
+    <iframe id="videoFrame" src="" allowfullscreen></iframe>
+    <button id="btnVoltarVideo">Ui Ui  - Clicka Aquiii</button>
+  </div>
+
+  <!-- IMAGEM -->
+  <div id="imagemTela">
+    <img id="imagemExibida" src="" alt="Imagem especial 💖">
+    <button id="btnVoltarImagem">Clickaaaa Aqui</button>
+  </div>
+
+  <script>
+    const btnSim = document.getElementById("btnSim");
+    const btnSim2 = document.getElementById("btnSim2");
+    const card = document.getElementById("card");
+    const player = document.getElementById("player");
+    const videoFrame = document.getElementById("videoFrame");
+    const btnVoltarVideo = document.getElementById("btnVoltarVideo");
+
+    const imagemTela = document.getElementById("imagemTela");
+    const imagemExibida = document.getElementById("imagemExibida");
+    const btnVoltarImagem = document.getElementById("btnVoltarImagem");
+
+    const videoURL = "https://streamable.com/e/emsuzr?autoplay=1"; // teu link do vídeo
+    const imagemURL = "https://i.imgflip.com/9iis6k.jpg";
+    btnSim.addEventListener("click", () => {
+      alert("Uui ui ui, ela aceitou!!! 🥹💘");
+      card.style.display = "none";
+      player.style.display = "flex";
+      videoFrame.src = videoURL;
+    });
+
+    btnSim2.addEventListener("click", () => {
+      card.style.display = "none";
+      imagemTela.style.display = "flex";
+      imagemExibida.src = imagemURL;
+    });
+
+    btnVoltarVideo.addEventListener("click", () => {
+      player.style.display = "none";
+      videoFrame.src = "";
+      card.style.display = "block";
+    });
+
+    btnVoltarImagem.addEventListener("click", () => {
+      imagemTela.style.display = "none";
+      imagemExibida.src = "";
+      card.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
